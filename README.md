@@ -5,7 +5,6 @@
 
 In the modern software development landscape, Continuous Integration/Continuous Deployment (CI/CD) pipelines play a pivotal role in automating the process of building, testing, and deploying applications. In this blog post, we’ll deep dive into the implementation of a robust CI/CD pipeline to deploy applications on Google Kubernetes Engine (GKE) using Google Cloud Build and Cloud Deploy services.
 
-Video Tutorial :   [![YouTube](https://img.shields.io/badge/YouTube-Video-green)](https://youtu.be/L_1qbt-Iii0?feature=shared)
 
 ## Requirements
 
@@ -15,8 +14,8 @@ To achieve our goal, we have the following requirements:
 - Dev-cluster deployment precedes production deployment, allowing for review before promoting to the prod-cluster.
 
 ## Architecture
+![gke-arche](https://github.com/user-attachments/assets/d0d1e1a4-7d80-4687-b4cf-80e668fc701b)
 
-![image](https://github.com/vishal-bulbule/gke-test/assets/143475073/66c914bb-4466-4a23-b977-f0880e1e1f12)
 
 ## Technical Stack Summary
 
@@ -39,7 +38,6 @@ We are going to implement the solution using the following steps to implement th
 7. Implement the necessary code to define the Cloud Deploy pipeline and targets for both dev-cluster and prod-cluster.
 8. Push the updated code to the GitHub repository, triggering the Cloud Build and Cloud Deploy processes.
 
-   If you encounter any confusion, please refer to the [Video](https://youtu.be/L_1qbt-Iii0?feature=shared)
- linked at the beginning of the blog.
+
 
 

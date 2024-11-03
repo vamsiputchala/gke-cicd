@@ -4,7 +4,7 @@ metadata:
   name: prod
   annotations: {}
   labels: {}
-description: Prod
+description: prod
 requireApproval: true
 gke:
   cluster: projects/gke-demo-440607/locations/us-central1-c/clusters/cluster-2

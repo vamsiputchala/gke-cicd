@@ -41,5 +41,19 @@ We are going to implement the solution using the following steps to implement th
    
 ## Steps to Execute
 
+cicd pipeline to deploy applications on gke using cloud build and cloud deploy
+
+flow: user push the code to git hub repo , once push with configured build trigger , triggers the cloud build 
+cloud build , builds the docker image with application code and push the image to artifact registry and also triggers cloud deploy pipeline
+
+cloud deploy pipeline deploys latest imagecontainer to dev Kubernetes cluster, if its fine then promotes to staging it is manual intervention, after that to production with approval from staging.
+
+Mainly using 3 services in gcp
+GOOGLE KUBERNETES ENGINE
+GOOGLE CLOUD BUILD
+GOOGLE CLOUD DEPLOY: Automates application deployment to a series of target environments like dev, stage, prod
+we can setup sequence in delivery pipeline
+
+cloud deploy uses scaffold file for rendering deployment and verification
 
 

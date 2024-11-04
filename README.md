@@ -41,21 +41,89 @@ We are going to implement the solution using the following steps to implement th
    
 ## Steps to Execute
 
-cicd pipeline to deploy applications on Google Kubernetes Engine using cloud build and cloud deploy.
+Cicd pipeline to deploy applications on Google Kubernetes Engine using cloud build and cloud deploy.
 
-Mainly using 3 services in GCP
+Mainly using 3 services in GCP:
+
 -GOOGLE KUBERNETES ENGINE
+
 -GOOGLE CLOUD BUILD
+
 -GOOGLE CLOUD DEPLOY: Automates application deployment to a series of target environments like dev, stage, prod. We can setup sequence in delivery pipeline.
 
-Project Flow: 
+## Project Flow: 
+
 1.When user push the code to git hub repo , the configured build trigger , triggers the cloud build.
+
 2.Cloud build , builds the docker image with application code and push the image to Artifact registry and also triggers cloud deploy pipeline.
+
 3.Cloud deploy pipeline deploys latest imagecontainer to dev Kubernetes cluster, if its fine then promotes to staging it is manual intervention, after that to 
   production with approval from staging.cloud deploy uses scaffold file for rendering deployment and verification.
 
 
+## Steps:
 
+1.Go to Kubernetes engine create 2 clusters
+
+   cluster1- dev cluster
+   
+   cluster2- prod cluster   
+
+
+2. We can create delivery pipe line by yaml file code.
+
+3.create build trigger to trigger cloud build while push code to git hub.
+  cloud build ---> triggers ---> create trigger
+event ---> push to branch
+
+source 1st gen 
+repository add repo add GitHub account and authorize
+
+
+
+configuration
+
+cloud build configuration file
+
+location repository
+file location   cloudbuild.yaml
+
+configure service account 
+
+create
+
+## cloudbuild.yaml file
+
+step1 : build docker image from app folder with dockerfile in app1 folder
+
+step2 : pushing docker image to artifact registery
+
+step3: build docker image from app folder with dockerfile in app2 folder
+
+
+step4: pushing docker image to artifact registery
+
+
+step5 :/ executing gcloud deploy apply ---> in deploy folder pipeline.yaml file
+
+         here we are deploying delivery pipeline from script instead of manual
+
+           in dev.yaml creating a dev target pointed to cluster1
+           
+            prod.yaml creating a prod target pointed to cluster2 
+
+
+step 6
+this step create release 1st release for app1.yaml
+
+app1.yaml--->deploying container image latest and expose as a service
+
+app2.yaml--->deploying container image latest and expose as a service
+
+
+As soon as push the change to git hub , cloud build pipeline start
+ and create docker images with docker file in app1 & app2 and the images push to artifact registry then code deploy starts and deploys build container image and 
+  1st deploys in dev after approve will deploy in prod
 
 
 

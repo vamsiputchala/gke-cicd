@@ -44,9 +44,9 @@ We are going to implement the solution using the following steps to implement th
 cicd pipeline to deploy applications on Google Kubernetes Engine using cloud build and cloud deploy.
 
 Mainly using 3 services in GCP
-GOOGLE KUBERNETES ENGINE
-GOOGLE CLOUD BUILD
-GOOGLE CLOUD DEPLOY: Automates application deployment to a series of target environments like dev, stage, prod. We can setup sequence in delivery pipeline.
+-GOOGLE KUBERNETES ENGINE
+-GOOGLE CLOUD BUILD
+-GOOGLE CLOUD DEPLOY: Automates application deployment to a series of target environments like dev, stage, prod. We can setup sequence in delivery pipeline.
 
 Project Flow: 
 1.When user push the code to git hub repo , the configured build trigger , triggers the cloud build.
